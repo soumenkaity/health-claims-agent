@@ -1,0 +1,35 @@
+[project]
+name = "claims-agent"
+version = "0.1.0"
+description = "Health insurance claims agent: LangGraph tool-calling agent over an MCP server, with evals"
+readme = "README.md"
+authors = [
+    { name = "Soumen_Kaity", email = "soumenkaity97@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.163.1",
+    "langchain-core>=1.8.1",
+    "langchain-mcp-adapters>=0.3.2",
+    "langchain-ollama>=1.1.0",
+    "langchain-openai>=1.8.0",
+    "langgraph>=1.2.22",
+    "mcp>=1.30.0",
+    "uvicorn>=0.54.0",
+]
+
+[project.scripts]
+claims-agent = "claims_agent.cli:main"
+claims-mcp = "claims_agent.mcp_server:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["uv_build>=0.11.28,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]

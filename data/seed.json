@@ -1,0 +1,45 @@
+{
+  "plans": [
+    {"code": "SILVER", "sum_insured": 300000, "room_rent_limit_per_day": 3000, "copay_pct": 10, "ped_wait_months": 36},
+    {"code": "GOLD", "sum_insured": 500000, "room_rent_limit_per_day": 5000, "copay_pct": 0, "ped_wait_months": 24},
+    {"code": "PLATINUM", "sum_insured": 1000000, "room_rent_limit_per_day": null, "copay_pct": 0, "ped_wait_months": 12},
+    {"code": "SENIOR", "sum_insured": 500000, "room_rent_limit_per_day": 4000, "copay_pct": 20, "ped_wait_months": 24}
+  ],
+  "members": [
+    {"member_id": "M1001", "name": "Aarav Shah", "plan": "GOLD", "policy_start": "2023-04-01", "status": "ACTIVE", "sum_insured_used": 50000, "pre_existing": ["diabetes"]},
+    {"member_id": "M1002", "name": "Priya Nair", "plan": "SILVER", "policy_start": "2026-10-25", "status": "ACTIVE", "sum_insured_used": 0, "pre_existing": []},
+    {"member_id": "M1003", "name": "Rahul Verma", "plan": "SILVER", "policy_start": "2022-01-15", "status": "ACTIVE", "sum_insured_used": 120000, "pre_existing": []},
+    {"member_id": "M1004", "name": "Sneha Iyer", "plan": "PLATINUM", "policy_start": "2025-06-01", "status": "ACTIVE", "sum_insured_used": 0, "pre_existing": ["hypertension"]},
+    {"member_id": "M1005", "name": "Vikram Rao", "plan": "SENIOR", "policy_start": "2024-03-10", "status": "ACTIVE", "sum_insured_used": 410000, "pre_existing": ["osteoarthritis"]},
+    {"member_id": "M1006", "name": "Ananya Ghosh", "plan": "GOLD", "policy_start": "2021-08-20", "status": "LAPSED", "sum_insured_used": 0, "pre_existing": []},
+    {"member_id": "M1007", "name": "Karan Mehta", "plan": "GOLD", "policy_start": "2025-02-01", "status": "ACTIVE", "sum_insured_used": 0, "pre_existing": []},
+    {"member_id": "M1008", "name": "Fatima Sheikh", "plan": "PLATINUM", "policy_start": "2020-05-05", "status": "ACTIVE", "sum_insured_used": 200000, "pre_existing": []},
+    {"member_id": "M1009", "name": "Rohan Das", "plan": "GOLD", "policy_start": "2025-09-01", "status": "ACTIVE", "sum_insured_used": 0, "pre_existing": ["diabetes"]}
+  ],
+  "hospitals": [
+    {"hospital_id": "H01", "name": "City Care Hospital", "city": "Kolkata", "network": true},
+    {"hospital_id": "H02", "name": "Sunrise Multispeciality Hospital", "city": "Bengaluru", "network": true},
+    {"hospital_id": "H03", "name": "Lakeview Clinic", "city": "Kolkata", "network": false},
+    {"hospital_id": "H04", "name": "Metro Heart Institute", "city": "Mumbai", "network": true},
+    {"hospital_id": "H05", "name": "Green Valley Hospital", "city": "Pune", "network": false}
+  ],
+  "procedures": [
+    {"code": "PR-101", "name": "Total knee replacement", "keywords": "knee replacement joint surgery orthopaedic", "specific_wait_months": 24, "related_condition": "osteoarthritis", "accident": false, "excluded": false},
+    {"code": "PR-102", "name": "Cataract surgery", "keywords": "cataract eye lens surgery", "specific_wait_months": 24, "related_condition": null, "accident": false, "excluded": false},
+    {"code": "PR-103", "name": "Appendectomy", "keywords": "appendix removal appendicitis appendectomy surgery", "specific_wait_months": 0, "related_condition": null, "accident": false, "excluded": false},
+    {"code": "PR-104", "name": "Coronary angioplasty", "keywords": "angioplasty heart stent cardiac coronary", "specific_wait_months": 0, "related_condition": "hypertension", "accident": false, "excluded": false},
+    {"code": "PR-105", "name": "Hernia repair", "keywords": "hernia repair surgery", "specific_wait_months": 24, "related_condition": null, "accident": false, "excluded": false},
+    {"code": "PR-106", "name": "Dengue fever treatment", "keywords": "dengue fever hospitalisation hospitalization medical", "specific_wait_months": 0, "related_condition": null, "accident": false, "excluded": false},
+    {"code": "PR-107", "name": "Fracture fixation after accident", "keywords": "fracture broken bone accident injury fixation", "specific_wait_months": 0, "related_condition": null, "accident": true, "excluded": false},
+    {"code": "PR-108", "name": "Diabetic foot ulcer treatment", "keywords": "diabetic foot ulcer diabetes wound", "specific_wait_months": 0, "related_condition": "diabetes", "accident": false, "excluded": false},
+    {"code": "PR-109", "name": "Cosmetic rhinoplasty", "keywords": "cosmetic nose job rhinoplasty plastic surgery", "specific_wait_months": 0, "related_condition": null, "accident": false, "excluded": true},
+    {"code": "PR-110", "name": "Kidney stone removal", "keywords": "kidney stone removal lithotripsy renal calculi", "specific_wait_months": 24, "related_condition": null, "accident": false, "excluded": false}
+  ],
+  "claims": [
+    {"claim_id": "C9001", "member_id": "M1001", "hospital_id": "H01", "procedure_code": "PR-103", "submitted_on": "2026-09-12", "billed_amount": 85000, "status": "SETTLED", "approved_amount": 85000, "remarks": "Cashless claim settled with the hospital."},
+    {"claim_id": "C9002", "member_id": "M1003", "hospital_id": "H03", "procedure_code": "PR-106", "submitted_on": "2026-11-02", "billed_amount": 64000, "status": "UNDER_REVIEW", "approved_amount": null, "remarks": "Waiting for the discharge summary from the member."},
+    {"claim_id": "C9003", "member_id": "M1005", "hospital_id": "H02", "procedure_code": "PR-102", "submitted_on": "2025-08-19", "billed_amount": 45000, "status": "REJECTED", "approved_amount": 0, "remarks": "Specific-disease waiting period of 24 months was not complete on the admission date."},
+    {"claim_id": "C9004", "member_id": "M1007", "hospital_id": "H04", "procedure_code": "PR-104", "submitted_on": "2026-10-28", "billed_amount": 210000, "status": "APPROVED", "approved_amount": 210000, "remarks": "Cashless authorisation approved; payment to hospital in progress."},
+    {"claim_id": "C9005", "member_id": "M1004", "hospital_id": "H05", "procedure_code": "PR-110", "submitted_on": "2026-11-10", "billed_amount": 98000, "status": "QUERY_RAISED", "approved_amount": null, "remarks": "Please upload the itemised room-rent invoice."}
+  ]
+}
